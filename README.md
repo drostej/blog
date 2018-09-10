@@ -1,2 +1,2 @@
 # blog
- A simple rails blog in a scaffolding pattern
+ A new  simple rails blog in a scaffolding pattern

@@ -1,7 +1,12 @@
+#Manual
+
+`` #This rails tutorial is based on the livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s 
+
+urls: http://localhost:3000/posts/new ``
+
 Ruby intallieren
 https://github.com/rbenv/rbenv.git
 
-#Manual
 https://github.com/rbenv/rbenv#basic-github-checkout
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -151,7 +156,7 @@ $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 ''' root 'pages#home' '''
 
 ## Scaffholding
-### gneerieren eines Feldes
+### gneerieren mehrer Felder
 rails g scaffold Post title:string image:string description:text
 ###Integration der Datenbank
 rake db:migrate
@@ -159,19 +164,22 @@ rake db:migrate
 
 # Rails create decorater
 Draper in die Anwendung inetrieren
-rails generate draper:install
+`rails generate draper:instal``
 
 ### Ergänzung des gemfiles
 ``gem draper``
 
 Mit bundle install stehen einem die draper featrues zur Verfügung
 
+### Ab jetzt wirde bei jedem Draper 
+
+
 # rails config syntax
 routes.rb
 get 'responses' => "pages#responselist"
 ein get reponses wird auf den Controller pages#responselist weitergeleitet
 
-``def create
+def create
        @post = Post.new(post_params)
 
        respond_to do |format|
@@ -184,7 +192,7 @@ ein get reponses wird auf den Controller pages#responselist weitergeleitet
          end
        end
      end
-   ``  
+ 
 
 Beispiel wie in einem Controller via render eine view gefüllt wird. Per Konvention würde der Pfad der request url gewählt.
 

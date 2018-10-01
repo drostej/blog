@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
-  def about
+  def manual
   end
 
-  def home
-  end
-
-  def contact
+  def responselist
   end
 end

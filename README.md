@@ -171,8 +171,12 @@ Draper in die Anwendung inetrieren
 
 Mit bundle install stehen einem die draper featrues zur Verfügung
 
-### Ab jetzt wirde bei jedem Draper 
-
+### Ab jetzt wirde bei jedem generate auch decorater erzeugt
+Objekte, auf die deokoriert zugegriffen werden soll, erhalten die 
+Decoreate Methode und so kann auf das Decorator Objekt zugegriffen werden
+ def set_post
+      @post = Post.find(params[:id]).decorate
+    end
 
 # rails config syntax
 routes.rb

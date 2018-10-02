@@ -9,5 +9,10 @@ class PostDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
+  #
+
+  def renderimage
+      "https://media.gettyimages.com/vectors/poseidon-cartoon-vector-id502375985?b=1&k=6&m=502375985&s=170x170&h=SpCLIFikWlufkFKWHIt0ql-6LGdci4NbvSNZmj8khr0="
+  end
 
 end

@@ -1,10 +1,10 @@
-#Manual
+# Manual
 
-``#This rails tutorial is based on the livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s`` 
+``# Dieser rails braindump zum Selbststudium basiert auf die dieser livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s`` 
 
 Sample page: http://localhost:3000/posts/new ``
 
-###Ruby intallieren
+### Ruby intallieren
 https://github.com/rbenv/rbenv.git
 ####Ruby Versionen installieren mit rbenv
 rbenv install 2.3.0

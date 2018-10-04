@@ -1,11 +1,13 @@
 #Manual
 
-`` #This rails tutorial is based on the livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s 
+``#This rails tutorial is based on the livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s`` 
 
-urls: http://localhost:3000/posts/new ``
+Sample page: http://localhost:3000/posts/new ``
 
-Ruby intallieren
+###Ruby intallieren
 https://github.com/rbenv/rbenv.git
+####Ruby Versionen installieren mit rbenv
+rbenv install 2.3.0
 
 https://github.com/rbenv/rbenv#basic-github-checkout
 
@@ -18,25 +20,23 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-#Ruby Versionen installieren mit rbenv
-rbenv install 2.3.0
 
-#Ruby Version festlegen
+####Ruby Version festlegen
 rbenv global 2.3.0
 
-# bundler - installiern / siehe pom.xml
+#### bundler - installiern / siehe pom.xml
 gem install bundler
 
-# native extensions z.B. ffi installieren
+#### native extensions z.B. ffi installieren
 brew install automake autoconf libtool
 gem install ffi -v '1.9.21'
 
-#Bauen der Anwendung
+### Bauen der Anwendung
 open .
 drosteJMBpro:digital-hero drostej$ cd apps/digital-hero/
 drosteJMBpro:digital-hero drostej$ bundle
 
-# Lauffen lassen
+### Lauffen lassen
 drosteJMBpro:digital-hero drostej$ rails server
 RAILS_ENV=dev rails server
 
@@ -47,35 +47,35 @@ RAILS_ENV=dev rails server
 
 See all available versions with `rbenv install --list'.
 
-# Fehlende ruby Version
-# If the version you need is missing, try upgrading ruby-build:
+###Fehlende ruby Version
+###If the version you need is missing, try upgrading ruby-build:
 
  cd /home/jan/.rbenv/plugins/ruby-build && git pull && cd -
 
-# Der debugger benötigt noch das readlines tool, welchs einfach mit homebrew installiert werden kann
+#### Der debugger benötigt noch das readlines tool, welchs einfach mit homebrew installiert werden kann
 
 http://guides.rubyonrails.org/v3.1.1/asset_pipeline.html
 
-# Anwendung starten
+#### Anwendung starten
 bundle exec rails s
 
 Stellt sicher, daß die im Projekt konfigurierte ruby version verwendet wird
 
-# Abhängigkeits Verwaltung
+#### Abhängigkeits Verwaltung
 gmefile
 bundle list
 
-# gruppen legen die Umgebung fest - Beispiel gemfile
+### gruppen legen die Umgebung fest - Beispiel gemfile
 
 group :development, :assets do end
 
 Mit konkreter Umgebung starten
 bundle exec rails s -e production
 
-# Pfade de Applikation anzeigen lassen
+### Pfade de Applikation anzeigen lassen
  bundle exec rails routes
 
- # konfiguraoin der Pafade
+### konfiguraoin der Pafade
  routes.rb
 
 # debugging
@@ -90,7 +90,15 @@ def index
     assign_recommendation
   end
 end
+
+##### Pry lässt sich mit folgenden Befehlen navigieren
++ next
++ step
++ continue
+
 #####
+
+
 
 #ruby testframework rspec
 bundle exec rails spec
@@ -135,11 +143,12 @@ class CustomerController < ApplicationController
   end
 end
 
-# openID connect - oauth2
+### openID connect - oauth2
 
-# Tests starten
-bundle exec rspec
+### Tests starten
+rspec
 
+### Durch setzten von Umgebungsvariablen kann man das logging verändern
 $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 
 
@@ -207,11 +216,30 @@ Auf der Konsole lassen sich alle Routen mit dem Befehl
 ausgeben
 
 
-# Ruby Sprachelemente
+# rails pattern
 
-@test="Hallo"
+ @http_status_code = status_code.to_i
 Eine Intatnzvarialbe vom String "Hallo"
 
+Im rails Umfeld werden diese Vriablen einem globelen Kontext zur Verfügung gestellt. Mit einer einfachen Funktion werden 
+diese WErte dem Frontend zur Verfügung gestellt.
+
+Der Wert von Test kann so als getter des entsprechenden Elemnts in der view verwendent werden.
+
+``class MockResponse  
+    attr_reader :response_file, :http_status_code, :body, :metadata
+     @http_status_code = status_code.to_i``
+     
+     
+Die Ausgabe im Frontend
+``%td= response.http_status_code``
+
+### Interessante gems
+
++ **Virtus** zur Serialisierung und Deserialisierung https://github.com/solnic/virtus
++ 
+
+# Ruby Basics
 
 
 

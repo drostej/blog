@@ -1,9 +1,8 @@
 # Manual
 
-``# Dieser rails braindump zum Selbststudium basiert auf die dieser livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s`` 
+``Dieser rails braindump zum Selbststudium basiert auf die dieser livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s 
 Learn to integrate a navigation https://www.youtube.com/watch?v=CSbF5gkogWs
-Integrate Bootstrap in a rails application https://www.youtube.com/watch?v=Nf_Si8_szmM``
-
+Integrate Bootstrap in a rails application https://www.youtube.com/watch?v=Nf_Si8_szmM
 Sample page: http://localhost:3000/posts/new ``
 
 ### Ruby intallieren
@@ -115,18 +114,19 @@ spec - Unittests
 
 Rails anschauen - Module auswählen und Empfehlungen ?! omakase
 
-#Vererbugn in ruby - > Beispie:
+##Vererbugn in ruby - > Beispie:
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 end
-#Regressionstests starten
+
+##Regressionstests starten
 rake integrate
 Eventuell vor erstmaliger ausführung:
 bundle exec rake
   --> beim lokalen start kann man folgendes machen
   SERVICE_HOST_AND_PORT=10.97.206.43:8080 DEBUG=1 rails server
 
-#Private und öffentliche Methoden unter ruby on rails
+##Private und öffentliche Methoden unter ruby on rails
 
 class CustomerController < ApplicationController
   def show
@@ -161,21 +161,22 @@ $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 
 
 ## Generierten von neuen Seiten
-''' rails g controller Pages about home contact''
+``rails g controller Pages about home contact``
 
 ## Nicht vergessen in der routes.rb die Rootpage zu setzen ##
-''' root 'pages#home' '''
+``root 'pages#home``
 
 ## Scaffholding
 ### gneerieren mehrer Felder
-rails g scaffold Post title:string image:string description:text
+``rails g scaffold Post title:string image:string description:text``
+
 ###Integration der Datenbank
-rake db:migrate
+``rake db:migrate`
 
 
 # Rails create decorater
 Draper in die Anwendung inetrieren
-`rails generate draper:instal``
+``rails generate draper:instal``
 
 ### Ergänzung des gemfiles
 ``gem draper``
@@ -187,7 +188,7 @@ Objekte, auf die deokoriert zugegriffen werden soll, erhalten die
 Decoreate Methode und so kann auf das Decorator Objekt zugegriffen werden
  def set_post
       @post = Post.find(params[:id]).decorate
-    end
+ end
     
     
 ## Bootstrap in ruby integrieren
@@ -200,7 +201,7 @@ die entsprechendne Importe müssen eingefügt werden.
  ***gemfile*** 
 
 # twitter bootstrap
-gem 'bootstrap-sass'
+``gem 'bootstrap-sass'``
 
 # rails config syntax
 routes.rb

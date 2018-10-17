@@ -1,6 +1,8 @@
 # Manual
 
 ``# Dieser rails braindump zum Selbststudium basiert auf die dieser livedemo https://www.youtube.com/watch?v=JaL9ul17kx0&t=24s`` 
+Learn to integrate a navigation https://www.youtube.com/watch?v=CSbF5gkogWs
+Integrate Bootstrap in a rails application https://www.youtube.com/watch?v=Nf_Si8_szmM``
 
 Sample page: http://localhost:3000/posts/new ``
 
@@ -186,6 +188,19 @@ Decoreate Methode und so kann auf das Decorator Objekt zugegriffen werden
  def set_post
       @post = Post.find(params[:id]).decorate
     end
+    
+    
+## Bootstrap in ruby integrieren
+***application.css.scss***
+Gegebenenfalls muß die Datei von applicatin.css in application.css.css umbenannt werden un d
+die entsprechendne Importe müssen eingefügt werden.
+ @import "bootstrap-sprockets";
+ @import "bootstrap"
+ 
+ ***gemfile*** 
+
+# twitter bootstrap
+gem 'bootstrap-sass'
 
 # rails config syntax
 routes.rb

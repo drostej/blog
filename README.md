@@ -51,6 +51,8 @@ See all available versions with `rbenv install --list'.
 Alternativ kann rails c aufgerufen werden und in die Konsole entsprechende Aufrufe. Mit DEBUG=1 wird falls
 das debugging entsprechend gestaltet ist, detaillierter sein
 
+Durch Ojekte kann wie durch einen Verzeichnisbaum mit cd, cd .. und ls navigiert werden.
+
 DEBUG=1 rails c
 
 ###Fehlende ruby Version

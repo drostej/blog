@@ -37,7 +37,7 @@ open .
 drosteJMBpro:digital-hero drostej$ cd apps/digital-hero/
 drosteJMBpro:digital-hero drostej$ bundle
 
-### Lauffen lassen
+### Laufen lassen
 drosteJMBpro:digital-hero drostej$ rails server
 RAILS_ENV=dev rails server
 
@@ -47,6 +47,11 @@ RAILS_ENV=dev rails server
 '''DEBUG=1 rails s'''   mehr debugging
 
 See all available versions with `rbenv install --list'.
+
+Alternativ kann rails c aufgerufen werden und in die Konsole entsprechende Aufrufe. Mit DEBUG=1 wird falls
+das debugging entsprechend gestaltet ist, detaillierter sein
+
+DEBUG=1 rails c
 
 ###Fehlende ruby Version
 ###If the version you need is missing, try upgrading ruby-build:
@@ -97,22 +102,40 @@ end
 + step
 + continue
 
-#####
+#### Es lassen sich sogar screenshots aus einer Seite speichern
 
+``save_and_open_page    save_and_open_screenshot``
 
-
-#ruby testframework rspec
+##ruby testframework rspec
 bundle exec rails spec
 
-#Testen -ruby skript ruft zeile 4 in recommendation_sec.rb auf
+
+
+###Testen -ruby skript ruft zeile 4 in recommendation_sec.rb auf
 bundle exec rspec spec/models/recommendation_spec.rb:4
 bundle exec rspec spec/integration/homepage_scene.rb
+
+Tests die noch nicht funktionieren, da sie in einem testgetriebenen Scenario noch auf ihre Implementierung warten, können auf **pending**
+gesetzt werden.
 
 Konvention:
 scene - Integrationstests
 spec - Unittests
 
 Rails anschauen - Module auswählen und Empfehlungen ?! omakase
+
+
+**Tests mit Mocks**
+
+Die expect Methode konfiguriert den Mock
+
+``it "uses Common::PhoneNumber if the msisdn is set" do
+  @user.login_cookie.msisdn = "01625555555"
+  expect(Common::PhoneNumber).to receive(:new).with("01625555555").and_return @deal.msisdn
+  expect(@user).to be_msisdn_matches(@deal)
+end``
+
+
 
 ##Vererbugn in ruby - > Beispie:
 class ApplicationController < ActionController::Base
@@ -147,9 +170,6 @@ end
 
 ### openID connect - oauth2
 
-### Tests starten
-rspec
-
 ### Durch setzten von Umgebungsvariablen kann man das logging verändern
 $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 
@@ -171,8 +191,7 @@ $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 ``rails g scaffold Post title:string image:string description:text``
 
 ###Integration der Datenbank
-``rake db:migrate`
-
+``rake db:migrate``
 
 # Rails create decorater
 Draper in die Anwendung inetrieren
@@ -249,6 +268,16 @@ Der Wert von Test kann so als getter des entsprechenden Elemnts in der view verw
      
 Die Ausgabe im Frontend
 ``%td= response.http_status_code``
+
+
+```before_action :assign_deal_or_render ```- gilt im Klassenkontetx und wird vor der Method Klasse ausgeführt
+```render partial```     schipsel importieren (wenn micht über Hierarchie lösbar !!)
+
+
+.html.haml
+= führt aus und gibt aus
+- führt aus
+
 
 ### Interessante gems
 

@@ -65,6 +65,10 @@ http://guides.rubyonrails.org/v3.1.1/asset_pipeline.html
 #### Anwendung starten
 bundle exec rails s
 
+#### Pflege der Abhängikeiten, feststellung von veralteten Importen
+bundle update [library]
+
+###
 Stellt sicher, daß die im Projekt konfigurierte ruby version verwendet wird
 
 #### Abhängigkeits Verwaltung

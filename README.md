@@ -91,8 +91,7 @@ bundle exec rails s -e production
  routes.rb
 
 # debugging
-In den code binding.pry eintrage
-
+In den code binding.pry eintragen. Sogar in der view -binding.pry
 
 ##### Beispiel:
 def index

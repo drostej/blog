@@ -7,6 +7,7 @@ Sample page: http://localhost:3000/posts/new ``
 
 ### Ruby intallieren
 https://github.com/rbenv/rbenv.git
+
 ####Ruby Versionen installieren mit rbenv
 rbenv install 2.3.0
 
@@ -280,10 +281,30 @@ Die Ausgabe im Frontend
 ```render partial```     schipsel importieren (wenn micht über Hierarchie lösbar !!)
 
 
+
 .html.haml
 = führt aus und gibt aus
 - führt aus
 
+### Verknüpungen zwischen den scaffholding Elementen
+#####form_for
+```
+<%= form_for @comment do |f| %>
+      <div class="field">
+```
+####belongs to
+
+```
+class Comment < ApplicationRecord
+  belongs_to :post
+end
+```
+#####has_many
+```
+class Post < ApplicationRecord
+  has_many :comments
+end
+```
 
 ### Interessante gems
 

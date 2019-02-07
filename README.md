@@ -46,11 +46,21 @@ RAILS_ENV=dev rails server
 rails s
 RAILS_ENV=dev rails server
 '''DEBUG=1 rails s'''   mehr debugging
+## Sourcecode finden in der Projektdatei:
+ pry(#<#<Class:0x00007fdd097bdcc8>>)> show-source option
+ 
+## von einem decorater das Objekt anzeigen
+o=option.object
+show-source o
 
 See all available versions with `rbenv install --list'.
 
 Alternativ kann rails c aufgerufen werden und in die Konsole entsprechende Aufrufe. Mit DEBUG=1 wird falls
 das debugging entsprechend gestaltet ist, detaillierter sein
+
+## Beispiel um eine boolean Feld abzufragen
+[1] pry(#<#<Class:0x00007fb5106257b0>>)> option.recurring?
+=> true
 
 Durch Ojekte kann wie durch einen Verzeichnisbaum mit cd, cd .. und ls navigiert werden.
 
@@ -92,8 +102,7 @@ bundle exec rails s -e production
  routes.rb
 
 # debugging
-In den code binding.pry eintrage
-
+In den code binding.pry eintragen. Sogar in der view -binding.pry
 
 ##### Beispiel:
 def index
@@ -311,10 +320,9 @@ end
 + **Virtus** zur Serialisierung und Deserialisierung https://github.com/solnic/virtus
 + 
 
-# Ruby Basics
-
-
-
-
-
-
+# Finden vom Code zu einer Stelle im Frontend
++ Die url des augefrufenen Seite feststellen
++ In der Anwendung mit rails routes herausfinden auf welchen controller und welche Methode darin die Url gemappt ist
++ Die contoller Methode gibt meist ein darzustellendes template zurück - > Im Falle von render template wird eine gleichnamige view dargestllt
++ Teilviews/Partials führen den Prefix _ im Namen. Wird eine komplette Seite gerendert, enden diese auf xyz.html.haml
++ An dieser Stelle sind die unterschielichen Möglichkeiten binding.pry im Contoller etc. einsetzpar

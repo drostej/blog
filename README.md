@@ -78,7 +78,7 @@ http://guides.rubyonrails.org/v3.1.1/asset_pipeline.html
 #### Anwendung starten
 bundle exec rails s
 
-#### Pflege der Abhängikeiten, feststellung von veralteten Importen
+#### Pflege der Abhängikeiten, feststellung von veralteten Importen, aktualisieren
 bundle update [library]
 
 ###
@@ -186,7 +186,7 @@ end
 
 ### openID connect - oauth2
 
-### Durch setzten von Umgebungsvariablen kann man das logging verändern
+### Durch setzten von Umgebungsvariablen kann man nach Regeln des aktuellen teams das logging verändern
 $ DEBUG=1 bundle exec rspec spec/integration/homepage_scene.rb:7
 
 
@@ -326,3 +326,4 @@ end
 + Die contoller Methode gibt meist ein darzustellendes template zurück - > Im Falle von render template wird eine gleichnamige view dargestllt
 + Teilviews/Partials führen den Prefix _ im Namen. Wird eine komplette Seite gerendert, enden diese auf xyz.html.haml
 + An dieser Stelle sind die unterschielichen Möglichkeiten binding.pry im Contoller etc. einsetzpar
+

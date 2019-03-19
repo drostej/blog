@@ -141,20 +141,22 @@ end
 ``save_and_open_page    save_and_open_screenshot``
 
 ##ruby testframework rspec
+
 bundle exec rails spec
-
-
-
 ###Testen -ruby skript ruft zeile 4 in recommendation_sec.rb auf
 bundle exec rspec spec/models/recommendation_spec.rb:4
 bundle exec rspec spec/integration/homepage_scene.rb
+
+
+``  it "shows recurring for other options", pending: "waiting for a other option that is recurring to write a working test" do
+``
 
 Tests die noch nicht funktionieren, da sie in einem testgetriebenen Scenario noch auf ihre Implementierung warten, können auf **pending**
 gesetzt werden.
 
 Konvention:
-scene - Integrationstests
-spec - Unittests
+**scene** - Integrationstests
+**spec** - Unittests
 
 Rails anschauen - Module auswählen und Empfehlungen ?! omakase
 

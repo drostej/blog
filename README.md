@@ -45,7 +45,26 @@ RAILS_ENV=dev rails server
 ### Anwendung starten
 rails s
 RAILS_ENV=dev rails server
-'''DEBUG=1 rails s'''   mehr debugging
+'''DEBUG=1 rails s'''   start mit umfangreicheren log.
+
+### debugging
+In den code binding.pry eintragen. Sogar in der view -binding.pry
+
+``next - n Um eine Zeile weiter ``
+
+``continue - c Fortsetzten des codes zum Schluß ``
+
+``step - s In die nächte Funktion springen ``
+
+#### Debugging mit Capibara
+
+``page.find ("#other")``
+Suche nach dem html tag other. Der headless browser ist ein Teil von capibare.
+
+``save_and_open_screenshot``
+Mit der Methode Capybara::Session#save_and_open_screenshot wird ein Screenshot als png in der präferierten Applikation geöffnet.
+
+
 ## Sourcecode finden in der Projektdatei:
  pry(#<#<Class:0x00007fdd097bdcc8>>)> show-source option
  
@@ -101,8 +120,7 @@ bundle exec rails s -e production
 ### konfiguraoin der Pafade
  routes.rb
 
-# debugging
-In den code binding.pry eintragen. Sogar in der view -binding.pry
+
 
 ##### Beispiel:
 def index

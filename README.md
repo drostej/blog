@@ -59,7 +59,8 @@ In den code binding.pry eintragen. Sogar in der view -binding.pry
 #### Debugging mit Capibara
 
 ``page.find ("#other")``
-Suche nach dem html tag other. Der headless browser ist ein Teil von capibare.
+``page.should have_css()``
+Suche nach dem html tag other. Der headless browser ist ein Teil von capibara.
 
 ``save_and_open_screenshot``
 Mit der Methode Capybara::Session#save_and_open_screenshot wird ein Screenshot als png in der präferierten Applikation geöffnet.
@@ -84,6 +85,9 @@ das debugging entsprechend gestaltet ist, detaillierter sein
 Durch Ojekte kann wie durch einen Verzeichnisbaum mit cd, cd .. und ls navigiert werden.
 
 DEBUG=1 rails c
+
+#### Ausführen von Methoden
+[4] pry(main)> Service::WinbackVvl.ursers
 
 ###Fehlende ruby Version
 ###If the version you need is missing, try upgrading ruby-build:

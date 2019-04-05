@@ -92,7 +92,8 @@ DEBUG=1 rails c
 oder
 Service::WinbackVvl.create_deal("V007", "2019-09-09" , "080628")
 Service::WinbackVvl.create_deal(vo_number:"V007", expiration_date:"2019-09-09" , ticket_id"7077242")
-```
+``
+
 In den letzen beiden Fällen wird im Modul Service die Klasse WinbackVvl mit der Methode createDeal und den Parametern in der Klammer 
 aufgerufen.
 

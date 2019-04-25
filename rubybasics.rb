@@ -1,4 +1,4 @@
-a = "Hallo stringoperatoin"
+a = "Hallo stringoperation"
 b = 123
 a_und_b = a + b.to_s
 puts a_und_b

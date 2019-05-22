@@ -6,6 +6,7 @@ then
     echo "Reformatting Ruby files: $changed_ruby_files"
     if ! rufo $changed_ruby_files
     then
+        git reset --hard
         echo "Some files were changed, aborting commit!" >&2
         exit 1
     fi

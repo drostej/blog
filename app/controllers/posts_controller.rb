@@ -50,6 +50,12 @@ class PostsController < ApplicationController
       end
     end
   end
+  
+  
+  
+  
+  
+  
 
   # DELETE /posts/1
   # DELETE /posts/1.json

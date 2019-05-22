@@ -17,6 +17,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+
+
+
   # GET /posts/1/edit
   def edit
   end

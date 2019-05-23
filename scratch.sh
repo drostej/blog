@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/bash
 
 changed_ruby_files=$(git show --pretty="" --name-only --diff-filter=ACMR | grep ".*rb$" || true)
 if [[ -n "$changed_ruby_files" ]]

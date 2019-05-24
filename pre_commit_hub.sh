@@ -3,12 +3,13 @@
 changed_ruby_files=$(git show --pretty="" --name-only --diff-filter=ACMR | grep ".*rb$" || true)
 if [[ -n "$changed_ruby_files" ]]
 then
-    echo "Reformatting Ruby files: $changed_ruby_files"
-    if ! rufo $changed_ruby_files
+    echo "Changed ruby files: $changed_ruby_files"
+    rufo $changed_ruby_files
+    exit_status=$?
+
+    if [ $exit_status -eq 3 ]
     then
-        git reset --hard
-        echo "Some files were changed, aborting commit!" >&2
-        exit 1
+        echo "Ruby files do not match rufo formater rules " $exit_status
     fi
 else
     echo "No ruby files changes found."

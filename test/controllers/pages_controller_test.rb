@@ -1,8 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   test "should get manual" do
     get pages_manual_url
+    binding.pry()
     assert_response :success
   end
 
@@ -10,5 +11,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get pages_responselist_url
     assert_response :success
   end
-
 end

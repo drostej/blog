@@ -5,6 +5,10 @@ Learn to integrate a navigation https://www.youtube.com/watch?v=CSbF5gkogWs
 Integrate Bootstrap in a rails application https://www.youtube.com/watch?v=Nf_Si8_szmM
 Sample page: http://localhost:3000/posts/new ``
 
+### Hosted on herouku
+
+https://bademeister-blog.herokuapp.com/posts/1
+
 ### Ruby intallieren
 https://github.com/rbenv/rbenv.git
 
@@ -88,7 +92,8 @@ DEBUG=1 rails c
 
 #### Ausführen von Methoden
 ``
-[4] pry(main)> Service::WinbackVvl.ursers
+[4] pry(main)> Service
+::WinbackVvl.ursers
 oder
 Service::WinbackVvl.create_deal("V007", "2019-09-09" , "080628")
 Service::WinbackVvl.create_deal(vo_number:"V007", expiration_date:"2019-09-09" , ticket_id"7077242")
@@ -132,9 +137,22 @@ bundle exec rails s -e production
 ### konfiguraoin der Pafade
  routes.rb
 
+###  Um im Projektkontext debuggen 
 
+* In einem Konfigurationsabschnitt , der nicht deployt wird, wird das gem ergänzt
+* Mit obiger Konfiguration kann mit bundle exec binding.pry genutzt werden
+
+```
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "pry-byebug"
+end
+```
 
 ##### Beispiel:
+
+````
 def index
   binding.pry
   if params[:reset]
@@ -142,11 +160,14 @@ def index
     assign_recommendation
   end
 end
+````
 
 ##### Pry lässt sich mit folgenden Befehlen navigieren
 + next
 + step
 + continue
+
+
 
 #### Es lassen sich sogar screenshots aus einer Seite speichern
 
@@ -196,6 +217,8 @@ Eventuell vor erstmaliger ausführung:
 bundle exec rake
   --> beim lokalen start kann man folgendes machen
   SERVICE_HOST_AND_PORT=10.97.206.43:8080 DEBUG=1 rails server
+  
+rake -T zeigt alle verfügbaren rake tasks an
 
 ##Private und öffentliche Methoden unter ruby on rails
 

@@ -42,6 +42,10 @@ open .
 drosteJMBpro:digital-hero drostej$ cd apps/digital-hero/
 drosteJMBpro:digital-hero drostej$ bundle
 
+### DB geneerieren mit rails
+rails db:create
+rails db:migrate
+
 ### Laufen lassen
 drosteJMBpro:digital-hero drostej$ rails server
 RAILS_ENV=dev rails server
